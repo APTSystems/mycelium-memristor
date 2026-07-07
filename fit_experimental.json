@@ -1,0 +1,23 @@
+{
+  "experimental_data_source": "LaRocco et al. 2025, Fig 5 (shiitake mycelium I-V)",
+  "digitized_points": 26,
+  "optimized_parameters": {
+    "tau_w_s": 4,
+    "g_max": 1.5,
+    "V_half_V": -0.01,
+    "V_slope_V": 0.25
+  },
+  "fit_quality": {
+    "rmse": 0.03947997281738383,
+    "pearson_r": 0.83182539824194,
+    "p_value": 1.3926710471519902e-07
+  },
+  "operating_voltage_V": 0.11,
+  "scaling_exponent_alpha": 0.860756055367927,
+  "scaling_r2": 0.9925381458553288,
+  "memristor_reference_alpha": 0.982546438261366,
+  "memristor_reference_r2": 0.999516027214293,
+  "cross_correlation_with_memristor_r": 0.9949257683455275,
+  "cross_correlation_p": 3.2538432464423117e-07,
+  "finding": "The Ca\u00b2\u207a model fits LaRocco's experimental I-V curves with RMSE=0.03948, r=0.8318. The optimized \u03c4_w=4s is in the biophysical range. Power-law scaling is preserved with \u03b1=0.861, r=0.9949 against the HP memristor reference."
+}

@@ -1,0 +1,88 @@
+{
+  "bridge_hypothesis": "Mycelium action potentials \u2248 Memristor switching dynamics",
+  "description": "Both systems are governed by voltage-driven slow state variables that modulate conductance, producing pinched I-V hysteresis loops whose area scales as A \u221d (dV/dt)^(-\u03b1).",
+  "parameters": {
+    "rates_log10": {
+      "min": 0.1,
+      "max": 10.0,
+      "n": 8
+    },
+    "mycelium": {
+      "g_max": 1.0,
+      "V_half": 0.0,
+      "V_slope": 0.25,
+      "tau_w": 8.0
+    },
+    "memristor": {
+      "R_on": 100,
+      "R_off": 10000,
+      "k": 200.0,
+      "x0": 0.3
+    }
+  },
+  "sweep": {
+    "dVdt_Vs": [
+      0.1,
+      0.193069772888325,
+      0.372759372031494,
+      0.7196856730011519,
+      1.3894954943731375,
+      2.6826957952797246,
+      5.17947467923121,
+      10.0
+    ]
+  },
+  "mycelium": {
+    "areas": [
+      0.11980602022292403,
+      0.09179739375867502,
+      0.0648110224384637,
+      0.05020035719843402,
+      0.036677965708583365,
+      0.023666224173315112,
+      0.01388455298103864,
+      0.00769215195483354
+    ],
+    "fit": {
+      "C": 0.036736462202842664,
+      "alpha": 0.5790570424061522,
+      "R_squared": 0.9766840756152482,
+      "bootstrap_95_ci": [
+        0.46260282693679095,
+        0.676335867605676
+      ]
+    }
+  },
+  "memristor": {
+    "areas": [
+      1.5028266377876644e-05,
+      7.480625771213821e-06,
+      3.835848285508101e-06,
+      1.9815035880022924e-06,
+      1.0255877467770945e-06,
+      5.311031570087721e-07,
+      2.750634703991905e-07,
+      1.4246785268812255e-07
+    ],
+    "fit": {
+      "C": 1.4375586597748461e-06,
+      "alpha": 1.0082057813267287,
+      "R_squared": 0.9999361094062564,
+      "bootstrap_95_ci": [
+        1.0006656150709805,
+        1.0162921031773056
+      ]
+    }
+  },
+  "cross_correlation": {
+    "pearson_r": 0.9874584184781824,
+    "p_value": 4.8854309610405405e-06,
+    "n_samples": 8
+  },
+  "files": {
+    "simulators": "simulators.py",
+    "analysis": "analyze.py",
+    "results": "results.json",
+    "plot": "plot.png"
+  }
+}
