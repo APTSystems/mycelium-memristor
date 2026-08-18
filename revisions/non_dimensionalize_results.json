@@ -1,0 +1,35 @@
+{
+  "reviewer_point": "R2-c4 non-dimensionalization",
+  "alpha_mycelium": 0.5790570424061522,
+  "alpha_memristor": 1.0082057813267287,
+  "pearson_r_log_areas_original_units": 0.9874584184781824,
+  "pearson_p": 4.8854309610405405e-06,
+  "pearson_r_under_arbitrary_current_scale": [
+    {
+      "current_scale": 1.0,
+      "pearson_r": 0.9874584184781824
+    },
+    {
+      "current_scale": 0.001,
+      "pearson_r": 0.9874584184781825
+    },
+    {
+      "current_scale": 1000000.0,
+      "pearson_r": 0.9874584184781823
+    },
+    {
+      "current_scale": 1e-09,
+      "pearson_r": 0.9874584184781825
+    }
+  ],
+  "invariance_conclusion": "Pearson r on log-transformed hysteresis areas is invariant to arbitrary multiplicative rescaling of current (a conductance-unit change maps to an additive shift in log-space, which Pearson r ignores). r=0.9875 is therefore unit-independent.",
+  "dimensionless_derivations": {
+    "mycelium": "I = g_max * w(V) * V   ;   V' = V/V_ref, I' = I/(g_max*V_ref)  ->  I' = w(v) * v,  dw/ds = (w_inf(v)-w)/tau_w'   where s = t/tau_w, tau_w' = 1.  Dimensionless hysteresis area A' = A/(g_max*V_ref^2). No physical constant remains; alpha identical.",
+    "memristor": "I = v / R(x), R(x)=R_on*x+R_off*(1-x). Set r=R_off/R_on, v'=v/V_ref, i'=i*R_on/V_ref -> i' = v'/(x + r*(1-x)). dx/ds = k' * i', k'=k*V_ref*R_on. Only RATIO r=R_off/R_on matters; absolute Ohms vanish. Dimensionless loop area A' = A*R_on/V_ref^2. alpha identical."
+  },
+  "note": "Both models reduce to dimensionless forms governed only by ratios (R_off/R_on) or unit-removed constants; alpha (exponent) is a pure number.",
+  "files": [
+    "non_dimensionalize.py",
+    "non_dimensionalize_results.json"
+  ]
+}
