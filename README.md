@@ -2,7 +2,7 @@
 
 **Calcium Action Potential Hysteresis in Fungal Mycelium as a Biological Memristor: A Computational Validation**
 
-Computational model and analysis code supporting the submission to *Chaos: An Interdisciplinary Journal of Nonlinear Science* (manuscript 26-AR-01834).
+Computational model and analysis code supporting the submission to *Chaos: An Interdisciplinary Journal of Nonlinear Science* (manuscript CHA26-AR-01834).
 
 ## Overview
 
@@ -63,6 +63,34 @@ python3 extend_bridge.py
 # Generate the main figure (Fig 1)
 python3 generate_figure.py
 ```
+
+### Reproduce the revision analyses (`revisions/`)
+
+```bash
+# Multi-state robustness: single-gate vs two-gate α(τ_w) sweep (rev Fig 1)
+python3 revisions/multi_state_model.py
+
+# Frequency dependence / high-frequency cutoff, band-pass A(f) (rev §4.2)
+python3 revisions/freq_sweep.py
+
+# Scale-invariance of the Pearson r under conductance rescaling (rev §2.3)
+python3 revisions/non_dimensionalize.py
+
+# Reverse-fit attempt against published I-V data; non-identifiability (rev §3.7)
+python3 revisions/reverse_fit.py
+
+# Regenerate the clean main validation figure (rev Fig. 3) and schematic (rev Fig. 2)
+python3 revisions/generate_figure1.py
+python3 revisions/mechanism_schematic.py
+```
+
+> **Inverse-fitting note:** the reverse fit to the digitized LaRocco et al. (2025)
+> I-V figure is *non-identifiable* because the published figure does not report the
+> exact sweep rate, absolute conductance scale, or waveform protocol. The script
+> therefore documents this non-identifiability: multiple (τ_w, g_max) pairs produce
+> comparable loop geometry, and the fit favors the fast end of the recovery range
+> without uniquely determining τ_w. In the manuscript the LaRocco comparison is
+> accordingly treated as a forward consistency test.
 
 ### Model description
 
